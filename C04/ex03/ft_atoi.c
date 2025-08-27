@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/27 14:45:29 by fdcurot           #+#    #+#             */
-/*   Updated: 2025/08/27 18:17:09 by fducrot          ###   ########.fr       */
+/*   Created: 2025/08/27 18:21:27 by fdcurot           #+#    #+#             */
+/*   Updated: 2025/08/27 19:19:20 by fducrot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putnbr(int nb)
+int ft_atoi(char *str)
 {
-	int long 	n;
-	int	c;
 	
-	n = nb;
-	if (nb < 0)
-	{
-		write(1, "-", 1);
-		n *= -1;
-	}
-	if (n > 9)
-	{
-		ft_putnbr (n / 10);
-	}
-	c = ((n % 10) + 48);
-	write(1, &c, 1);
 }
-/*int	main()
+int	main(int argv, char **argc)
 {
-	ft_putnbr(42);
-}*/
+	
+}

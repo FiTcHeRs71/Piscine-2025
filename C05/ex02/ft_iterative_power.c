@@ -1,36 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/27 14:45:29 by fdcurot           #+#    #+#             */
-/*   Updated: 2025/09/01 08:11:16 by fducrot          ###   ########.fr       */
+/*   Created: 2025/08/31 17:39:32 by fdcurot           #+#    #+#             */
+/*   Updated: 2025/09/01 12:59:44 by fducrot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putnbr(int nb)
+int	ft_iterative_power(int nb, int power)
 {
-	int long	n;
-	int long	c;
+	int	s;
 
-	n = nb;
-	if (nb < 0)
+	s = nb;
+	if (power < 0)
 	{
-		write(1, "-", 1);
-		n *= -1;
+		return (0);
 	}
-	if (n > 9)
+	if (power == 0)
 	{
-		ft_putnbr (n / 10);
+		return (1);
 	}
-	c = ((n % 10) + 48);
-	write(1, &c, 1);
+	while (power > 1)
+	{
+		s = s * nb;
+		power --;
+	}
+	return (s);
 }
 /*int	main()
 {
-	ft_putnbr(42);
+	int	nb;
+	int	power;
+	int	r;
+
+	nb = 2;
+	power = 3;
+	r = ft_iterative_power(nb, power);
 }*/

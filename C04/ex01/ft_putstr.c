@@ -6,7 +6,7 @@
 /*   By: fducrot <fducrot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 14:38:47 by fdcurot           #+#    #+#             */
-/*   Updated: 2025/08/27 14:44:41 by fducrot          ###   ########.fr       */
+/*   Updated: 2025/08/30 18:24:39 by fducrot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 int	ft_putstr(char *str)
 {
 	int	i;
-	
+
 	i = 0;
-	while(str[i] != '\0')
+	while (str[i] != '\0')
 	{
 		write(1, &str[i], 1);
 		i++;
 	}
-	return(0);
+	return (0);
 }

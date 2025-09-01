@@ -6,11 +6,12 @@
 /*   By: fducrot <fducrot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 17:25:43 by fdcurot           #+#    #+#             */
-/*   Updated: 2025/08/27 11:11:52 by fducrot          ###   ########.fr       */
+/*   Updated: 2025/08/29 14:57:58 by fducrot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
@@ -32,7 +33,7 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	dest[i] = '\0';
 	return (dest);
 }
-/*int 	main()
+int 	main()
 {
 	char	tab1[] = "kcorp ";
 	char	tab2[] = "on fire";
@@ -41,7 +42,7 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 
 	r = *ft_strncat(tab1, tab2, t);
 
-	printf("%d", tab1);
+	printf("%s", tab1);
 	
 	return (0);
-}*/
+}

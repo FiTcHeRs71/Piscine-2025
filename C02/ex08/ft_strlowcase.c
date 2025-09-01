@@ -29,13 +29,12 @@ char	*ft_strlowcase(char *str)
 	}
 	return (str);
 }
-/*int	main()
+int	main()
 {
-	int	i;
 	char tab[27] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	
 	ft_strlowcase(tab);
 	
 	write(1, tab, 27);
 	
-}*/
+}

@@ -12,8 +12,7 @@
 
 #include <unistd.h>
 
-
-int ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
 	int	i;
 	int	v;
@@ -21,27 +20,24 @@ int ft_atoi(char *str)
 
 	i = 0;
 	v = 0;
-	ngps = 1;;
-
-		while((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+	ngps = 1;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	while (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
 		{
-			i++;
+			ngps *= -1;
 		}
-		while(str[i] == '+' || str[i] == '-')
-		{
-			if(str[i] == '-')
-			{
-				ngps *= -1;
-			}
-			i++;
-		}
-		while(str[i] <= '9' && str[i] >= '0')
-		{
-			v = (v * 10) + (str[i] - '0');
-			i++;
-		}
-		v *= ngps;
-		return (v);
+		i++;
+	}
+	while (str[i] <= '9' && str[i] >= '0')
+	{
+		v = (v * 10) + (str[i] - '0');
+		i++;
+	}
+	v *= ngps;
+	return (v);
 }
 /*int	main()
 {

@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fducrot <fducrot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/27 14:45:29 by fdcurot           #+#    #+#             */
-/*   Updated: 2025/09/01 08:11:16 by fducrot          ###   ########.fr       */
+/*   Created: 2025/09/01 10:21:47 by fdcurot           #+#    #+#             */
+/*   Updated: 2025/09/01 13:01:34 by fducrot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putnbr(int nb)
+int	ft_fibonacci(int index)
 {
-	int long	n;
-	int long	c;
+	int	temp;
 
-	n = nb;
-	if (nb < 0)
+	temp = index;
+	if (index < 0)
 	{
-		write(1, "-", 1);
-		n *= -1;
+		return (-1);
 	}
-	if (n > 9)
+	if (index < 2)
 	{
-		ft_putnbr (n / 10);
+		return (index);
 	}
-	c = ((n % 10) + 48);
-	write(1, &c, 1);
+	else
+	{
+		return (ft_fibonacci (index - 2) + ft_fibonacci (index - 1));
+	}
 }
 /*int	main()
 {
-	ft_putnbr(42);
+	ft_fibonacci(0);
 }*/

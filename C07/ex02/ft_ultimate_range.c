@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fducrot <fducrot@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fdcurot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/01 13:35:47 by fdcurot           #+#    #+#             */
-/*   Updated: 2025/09/02 15:27:29 by fducrot          ###   ########.fr       */
+/*   Created: 2025/09/03 15:49:27 by fdcurot           #+#    #+#             */
+/*   Updated: 2025/09/03 15:49:29 by fdcurot          ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putstr(char *str)
+int	ft_ultimate_range(int **range, int min, int max)
 {
+	int	*tab;
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	if (min >= max)
 	{
-		write(1, &str[i], 1);
+		*range = NULL;
+		return (0);
+	}
+	tab = malloc(sizeof(int *) * (max - min));
+	if (tab == NULL)
+	{
+		return (-1);
+	}
+	while (i < max - min)
+	{
+		tab[i] = min + i;
 		i++;
 	}
-	write(1, "\n", 1);
-}
-
-int	main(int argc, char **argv)
-{
-	(void)argc;
-	ft_putstr (argv[0]);
-	return (0);
+	*range = tab;
+	return(i);
 }

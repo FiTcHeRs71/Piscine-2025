@@ -1,33 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fducrot <fducrot@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fdcurot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/01 13:35:47 by fdcurot           #+#    #+#             */
-/*   Updated: 2025/09/02 15:27:29 by fducrot          ###   ########.fr       */
+/*   Created: 2025/09/03 08:46:21 by fdcurot           #+#    #+#             */
+/*   Updated: 2025/09/03 08:46:23 by fdcurot          ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putstr(char *str)
+int	ft_is_prime(int nb)
 {
 	int	i;
 
-	i = 0;
-	while (str[i] != '\0')
+	i = 2;
+	if (nb < 2)
 	{
-		write(1, &str[i], 1);
+		return (0);
+	}
+	while (i <= nb / i)
+	{
+		if (nb % i == 0)
+		{
+			return (0);
+		}
 		i++;
 	}
-	write(1, "\n", 1);
+	return (1);
 }
 
-int	main(int argc, char **argv)
+int	ft_find_next_prime(int nb)
 {
-	(void)argc;
-	ft_putstr (argv[0]);
-	return (0);
+	int	i;
+
+	i = nb;
+	if (ft_is_prime (nb))
+	{
+		return (nb);
+	}
+	while (!ft_is_prime (i))
+	{
+		i++;
+	}
+	return (i);
 }

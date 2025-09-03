@@ -1,0 +1,117 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rush04.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fdcurot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/23 10:34:36 by fdcurot           #+#    #+#             */
+/*   Updated: 2025/08/23 10:34:38 by fdcurot          ###   ####lausanne.ch   */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+char    ft_putchar(char c);
+
+
+void ligne1(x, y)
+{
+int	z;
+
+z = 1;
+while ( x >= z || y >= z)
+
+	{
+		if (z == 1)
+		{
+			ft_putchar('o');
+		}
+	
+	       while (z < (x-1))
+	       {
+			ft_putchar('-');
+			z++;
+	       }
+	z++;
+		if (z == x)
+		{
+			ft_putchar('o');
+			z++;
+		}
+	}
+	write(1, "\n", 1);
+}
+
+void ligne2(x, y)
+{
+int	z;
+
+z = 1;
+while ( x >= z || y >= z)
+	{
+		if (z == 1)
+		{
+			ft_putchar('|');
+		}
+	
+	       while (z < (x-1))
+	       {
+			ft_putchar(' ');
+			z++;
+	       }
+	z++;
+		if (z == x)
+		{
+			ft_putchar('|');
+			z++;
+		}
+	}
+write(1, "\n", 1);
+}
+
+void ligne3(x, y)
+{
+int	z;
+
+z = 1;
+while ( x >= z || y >= z)
+	{
+		if (z == 1)
+		{
+			ft_putchar('o');
+		}
+	
+	       while (z < (x-1))
+	       {
+			ft_putchar('-');
+			z++;
+	       }
+	z++;
+		if (z == x)
+		{
+			ft_putchar('o');
+			z++;
+		}
+	}
+}
+void    rush(int x, int y)
+{
+    int    p;
+    p = 1;
+    if (x > 0 || y > 0)
+    {
+        ligne1(x, y);
+    }
+    if (y > 0) 
+    {
+        while(p <= (y-2))
+    {
+        ligne2(x, y);
+        p++;
+    }
+    }
+    if (y > 1)
+    {
+        ligne3(x, y);
+    }
+}

@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fducrot <fducrot@student.42.fr>            +#+  +:+       +#+        */
+/*   By: leilai <marvin@42lausanne.ch>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/01 13:35:47 by fdcurot           #+#    #+#             */
-/*   Updated: 2025/09/02 15:27:29 by fducrot          ###   ########.fr       */
+/*   Created: 2025/08/31 12:22:38 by leilai            #+#    #+#             */
+/*   Updated: 2025/08/31 18:44:20 by leilai           ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putstr(char *str)
+void	print(int **grid, int s)
 {
-	int	i;
+	int		r;
+	int		c;
+	char	ch;
 
-	i = 0;
-	while (str[i] != '\0')
+	r = 0;
+	while (r < s)
 	{
-		write(1, &str[i], 1);
-		i++;
+		c = 0;
+		while (c < s)
+		{
+			ch = grid[r][c] + '0';
+			write(1, &ch, 1);
+			if (c < s - 1)
+				write(1, " ", 1);
+			c++;
+		}
+		write(1, "\n", 1);
+		r++;
 	}
-	write(1, "\n", 1);
-}
-
-int	main(int argc, char **argv)
-{
-	(void)argc;
-	ft_putstr (argv[0]);
-	return (0);
 }

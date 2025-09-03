@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fducrot <fducrot@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fdcurot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/01 13:35:47 by fdcurot           #+#    #+#             */
-/*   Updated: 2025/09/02 15:27:29 by fducrot          ###   ########.fr       */
+/*   Created: 2025/09/02 20:21:22 by fdcurot           #+#    #+#             */
+/*   Updated: 2025/09/02 20:21:26 by fdcurot          ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putstr(char *str)
+int	ft_is_prime(int nb)
 {
 	int	i;
 
-	i = 0;
-	while (str[i] != '\0')
+	i = 2;
+	if (nb <= 1)
 	{
-		write(1, &str[i], 1);
+		return (0);
+	}
+	while (i < nb)
+	{
+		if (nb % i == 0)
+		{
+			return (0);
+		}
 		i++;
 	}
-	write(1, "\n", 1);
-}
-
-int	main(int argc, char **argv)
-{
-	(void)argc;
-	ft_putstr (argv[0]);
-	return (0);
+	return (1);
 }

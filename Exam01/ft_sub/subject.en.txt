@@ -1,0 +1,14 @@
+Assignment name  : ft_sub
+Expected files   : ft_sub.c
+Allowed functions:
+Version          : 1
+--------------------------------------------------------------------------------
+
+Write a function that takes 2 parameters: first a pointer to an integer and
+second an integer. This function will substract the second integer to the integer
+pointed by the pointer received as first parameter.
+
+
+Your function must be declared as follows:
+
+void    ft_sub(int *ptr, int number);

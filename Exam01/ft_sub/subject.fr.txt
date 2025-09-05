@@ -1,0 +1,13 @@
+Assignment name  : ft_sub
+Expected files   : ft_sub.c
+Allowed functions:
+Version          : 1
+--------------------------------------------------------------------------------
+
+Écris une fonction qui prend 2 paramètres : en premier un pointeur vers un entier et
+second un entier. Cette fonction va soustraire le second entier à l’entier
+pointé par le pointeur reçu comme premier paramètre.
+
+Votre fonction doit être déclarée comme suit :
+
+void    ft_sub(int *ptr, int number);

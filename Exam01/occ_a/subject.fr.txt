@@ -1,0 +1,18 @@
+Assignment name  : occ_a
+Expected files   : occ_a.c
+Allowed functions:
+Version          : 1
+--------------------------------------------------------------------------------
+Écris une fonction qui retourne le nombre d’occurrences du caractère 'A'
+dans la chaîne donnée.
+
+Par exemple:
+Hello World
+0
+
+ZzAaa
+1
+
+Your function must be declared as follows:
+
+int     occ_a(char *str);

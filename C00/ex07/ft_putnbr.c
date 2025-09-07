@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: fdcurot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/21 09:23:53 by fducrot           #+#    #+#             */
-/*   Updated: 2025/08/21 17:31:26 by fducrot          ###   ####lausanne.ch   */
+/*   Created: 2025/09/05 09:50:28 by fdcurot           #+#    #+#             */
+/*   Updated: 2025/09/05 09:50:29 by fdcurot          ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putstr(char *str)
+void	ft_putnbr(int nb)
 {
-	int	a;
+	int long	n;
+	int long	c;
 
-	a = 0;
-	while (str[a] != '\0')
+	n = nb;
+	if (nb < 0)
 	{
-		write(1, &str[a], 1);
-		a++;
+		write(1, "-", 1);
+		n *= -1;
 	}
+	if (n > 9)
+	{
+		ft_putnbr(n / 10);
+	}
+	c = ((n % 10) + 48);
+	write(1, &c, 1);
 }
-
-/*int	main()
-{
-ft_putstr("KCORP ON FIRE");
-}*/

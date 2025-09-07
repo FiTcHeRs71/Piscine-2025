@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: fdcurot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/21 16:11:39 by fducrot           #+#    #+#             */
-/*   Updated: 2025/08/21 17:35:55 by fducrot          ###   ####lausanne.ch   */
+/*   Created: 2025/09/07 09:46:10 by fdcurot           #+#    #+#             */
+/*   Updated: 2025/09/07 09:46:11 by fdcurot          ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,19 @@ void	ft_swap(int *a, int *b)
 	*b = temp;
 }
 
-void	ft_rev_int_tab(int *tab, int size)
+void	ft_sort_int_tab(int *tab, int size)
 {
 	int	i;
 
 	i = 0;
-	while (i < (size / 2))
+	while (i < (size - 1))
 	{
-		ft_swap(&tab[i], &tab[size - i - 1]);
 		i++;
+		if (tab[i] < tab[i - 1])
+		{
+			ft_swap(&tab[i], &tab[i - 1]);
+			i = 0;
+		}
 	}
 }
 

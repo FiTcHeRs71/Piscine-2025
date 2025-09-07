@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fducrot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: fdcurot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/21 09:23:53 by fducrot           #+#    #+#             */
-/*   Updated: 2025/08/21 17:31:26 by fducrot          ###   ####lausanne.ch   */
+/*   Created: 2025/09/07 10:16:24 by fdcurot           #+#    #+#             */
+/*   Updated: 2025/09/07 10:16:26 by fdcurot          ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putstr(char *str)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int	a;
-
-	a = 0;
-	while (str[a] != '\0')
-	{
-		write(1, &str[a], 1);
-		a++;
-	}
+	if (size)
 }
-
-/*int	main()
-{
-ft_putstr("KCORP ON FIRE");
-}*/

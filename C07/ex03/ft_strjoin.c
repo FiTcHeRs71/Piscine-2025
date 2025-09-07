@@ -12,6 +12,17 @@
 
 #include <unistd.h>
 
+int	ft_total_size(char **strs, int size)
+{
+	int	i;
+
+	while(strs[i] > size)
+	{
+		i++;
+	}
+	return(i);
+}
+
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
 	int	i;
@@ -22,12 +33,13 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 
 	i = 1;
 	k = 0;
+	ft_size_total();
 	tab = malloc(sizeof(char *) * size);
 	while(*strs[i] != 0)
 	{
 		j = 0;
 		while (strs[j] != '\0')
-		{
+		{ 
 			tab[k] = strs[j];
 			k++;
 			j++;
@@ -37,6 +49,12 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	tab[k] = '\0';
 	return(tab);
 }
-//size combien de strings a comcat
+//size combien de strings a concat
 // **strs la ou sont les string
 //  sep  = separation entre les strings
+
+int	main()
+{
+	int	size;
+	char	
+}

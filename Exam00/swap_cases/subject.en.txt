@@ -1,0 +1,17 @@
+Assignment name  : swap_cases
+Expected files   : swap_cases.c
+Allowed functions:
+Version          : 1
+--------------------------------------------------------------------------------
+
+Write a function that return the given string with replacing each uppercase
+letter by their lowercase equivalence and vice versa. Other characters remain unchanged.
+
+For example:
+WeLcOmE tO 42 sChoOl.
+becomes
+wElCoMe To 42 ScHOol.
+
+Your function must be declared as follows:
+
+char    *swap_cases(char *str);

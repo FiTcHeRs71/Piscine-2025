@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdlib.h>
 
 int	ft_strlen(char *str)
 {
@@ -21,36 +22,45 @@ int	ft_strlen(char *str)
 	{
 		i++;
 	}
-	return(i);
+	return (i);
 }
+
 char	*ft_strdup(char *src)
 {
 	char	*copy;
-	int	i;
+	int		i;
 
 	i = 0;
 	copy = malloc(sizeof (char) * (ft_strlen(src) + 1));
 	if (!copy)
 	{
-		return(NULL);
+		return (NULL);
 	}
 	while (src[i] != '\0')
 	{
 		copy[i] = src[i];
 		i++;
 	}
-	copy[i] ='\0';
-	return(copy);
+	copy[i] = '\0';
+	return (copy);
 }
 
 /*
-#include <stdlib.h>
-#include <stdio.h>
-int	main(void)
+
+ int	main(void)
 {
 	char	*src = "KCORP ON FIRE !!";
 	char	*copy;
 
 	copy = ft_strdup(src);
-	printf("%s", copy);
-}*/
+
+	int i;
+	i = 0;
+	while(copy[i])
+	{
+		write(1, &copy[i], 1);
+		i++;
+	}
+	write(1, "\n", 1);
+	
+} */

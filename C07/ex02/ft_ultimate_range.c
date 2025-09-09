@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdlib.h>
 
 int	ft_ultimate_range(int **range, int min, int max)
 {
@@ -34,5 +35,5 @@ int	ft_ultimate_range(int **range, int min, int max)
 		i++;
 	}
 	*range = tab;
-	return(i);
+	return (i);
 }

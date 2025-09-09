@@ -1,56 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fdcurot <fducrot@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/03 11:23:32 by fdcurot           #+#    #+#             */
-/*   Updated: 2025/09/03 11:23:35 by fdcurot          ###   ####lausanne.ch   */
+/*   Created: 2025/09/09 18:02:51 by fdcurot           #+#    #+#             */
+/*   Updated: 2025/09/09 18:02:54 by fdcurot          ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdlib.h>
 
-int	*ft_range(int min, int max)
+void	ft_putnbr(int nbr)
 {
-	int	*tab;
-	int	i;
+	long int	n;
+	long int 	c;
 
-	i = 0;
-	if (min >= max)
+	n = nbr;
+	c = 0;
+	if (nbr < 0)
 	{
-		return (0);
+		write(1, "-", 1);
+		nbr *= -1;
 	}
-	tab = malloc(sizeof(int) * (max - min));
-	if (tab == 0)
+	if (nbr >= 10)
 	{
-		return (0);
+		ft_putnbr(n / 10);
 	}
-	while (i < (max - min))
-	{
-		tab[i] = min + i;
-		i++;
-	}
-	return (tab);
+	c = ((n % 10) + 48);
+	write(1, &c, 1);
 }
-
-/* 
-
-#include <stdio.h>
 int	main(void)
 {
-	//int	i;
-	int	min;
-	int	max;
-	int	*tab;
-
-	min = 0;
-	max = 5;
-
-	tab = ft_range(min, max);
-
-	printf("%ls", tab);
+	ft_putnbr(-2147483648);
 }
- */

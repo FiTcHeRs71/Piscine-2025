@@ -1,0 +1,60 @@
+課題名            : flood_fill
+提出ファイル       : *.c, *.h
+使用可能な関数      : -
+--------------------------------------------------------------------------------
+
+char **型の二次元配列、配列のサイズの情報を保持しているt_point構造体、
+スタートポジションを保持しているt_point構造体をパラメータとして受け取る関数を書きなさい。
+
+この関数は'begin'というt_point構造体のから得た位置からスタートし、中にある文字を'F'へと変換し、
+ゾーン全体を「色付け」する。ゾーンとは、同じ文字が他の文字で水平および垂直に区切られている
+集合体のことを指す。
+
+flood_fill関数は対角線上に「色付け」をしない。
+
+flood_fill関数はこのようなパラメータリストを用いる：
+  void  flood_fill(char **tab, t_point size, t_point begin);
+
+t_pointの構造体は"t_point.h"というファイルの中に定義されている。
+評価中は我々の"t_point.h"を使う。
+
+例）
+
+$> cat test_main.c
+#include "test_functions.h"
+#include "flood_fill.h"
+
+int main(void)
+{
+	char **area;
+	t_point size = { 8, 5 };
+	t_point begin = { 2, 2 };
+	char *zone[] = {
+		"11111111",
+		"10001001",
+		"10010001",
+		"10110001",
+		"11100001"
+	};
+
+	area = make_area(zone);
+	print_tab(area);
+	flood_fill(area, size, begin);
+	putc('\n');
+	print_tab(area);
+	return (0);
+}
+
+$> gcc flood_fill.c test_main.c test_functions.c -o flood_fill ; ./flood_fill
+1 1 1 1 1 1 1 1
+1 0 0 0 1 0 0 1
+1 0 0 1 0 0 0 1
+1 0 1 1 0 0 0 1
+1 1 1 0 0 0 0 1
+
+1 1 1 1 1 1 1 1
+1 F F F 1 0 0 1
+1 F F 1 0 0 0 1
+1 F 1 1 0 0 0 1
+1 1 1 0 0 0 0 1
+$> 

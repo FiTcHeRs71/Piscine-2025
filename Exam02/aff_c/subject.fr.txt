@@ -1,0 +1,27 @@
+Assignment name  : aff_c
+Expected files   : aff_c.c
+Version          : 1
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Écris un programme qui prend une chaîne de caractères en argument
+et affiche le premier caractère 'c' qu’il rencontre dans cette 
+chaîne, suivi d’un retour à la ligne.
+
+S’il n’y a aucun caractère 'c' dans la chaîne, le programme affiche 'c'
+suivi d’un retour à la ligne.
+Si le nombre de paramètres est différent de 1, le programme affiche 
+également 'c' suivi d’un retour à la ligne.
+
+Example:
+
+$> ./aff_c "abc" | cat -e
+c$
+$> ./aff_c 'RaInB0w d4Sh!' | cat -e
+c$
+$> ./aff_c 'ThE C4k3 Is a L|3' | cat -e
+c$
+$> ./aff_c 'C0cOnUt 0N th3 b3AcH' | cat -e
+c$
+$> ./aff_c | cat -e
+c$

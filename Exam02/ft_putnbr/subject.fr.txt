@@ -1,0 +1,13 @@
+Assignment name  : ft_putnbr
+Expected files   : ft_putnbr.c
+Version          : 1
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Écris une fonction qui affiche le nombre donné en paramètre.
+La fonction doit être capable d'afficher toutes les valeurs 
+possibles du type int.
+
+Your function must be declared as follows:
+
+void    ft_putnbr(int nb);

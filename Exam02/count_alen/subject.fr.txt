@@ -1,0 +1,12 @@
+Assignment name  : count_alen
+Expected files   : count_alen.c
+Allowed functions:
+Version          : 1
+--------------------------------------------------------------------------------
+
+Écrivez une fonction qui retourne la longueur d'une chaîne jusqu'au premier caractère 'a' rencontré.  
+Si aucun 'a' n'est présent dans la chaîne, retournez la longueur totale de la chaîne.
+
+Votre fonction doit être déclarée comme suit :
+
+int count_alen(char *str);
